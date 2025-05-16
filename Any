@@ -1,0 +1,17 @@
+POST https://analyticsdata.googleapis.com/v1beta/properties/GA_PROPERTY_ID:runReport
+{
+  "dimensions": [{ "name": "cohort" }, { "name": "cohortNthDay" }],
+  "metrics": [{ "name": "cohortActiveUsers" }],
+  "cohortSpec": {
+    "cohorts": [
+      {
+        "dimension": "firstSessionDate",
+        "dateRange": { "startDate": "2020-12-01", "endDate": "2020-12-01" }
+      }
+    ],
+    "cohortsRange": {
+      "endOffset": 5,
+      "granularity": "DAILY"
+    }
+  },
+}
